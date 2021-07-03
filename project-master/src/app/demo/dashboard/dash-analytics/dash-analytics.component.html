@@ -1,0 +1,58 @@
+<div class="row">
+  <!-- conversion-section start -->
+  <div class="col-sm-12">
+    <div class="row no-gutters">
+      <div class="col-md-4 col-xl-2 col-sm-6">
+        <app-card [hidHeader]="true">
+          <span>User</span>
+          <h3>798</h3>
+          <app-apex-chart chartID="analytics-apex-user-chart" [chartConfig]="this.chartDB.userAACC"></app-apex-chart>
+        </app-card>
+      </div>
+      <div class="col-md-4 col-xl-2 col-sm-6">
+        <app-card [hidHeader]="true">
+          <span>Session</span>
+          <h3>486</h3>
+          <app-apex-chart chartID="analytics-apex-session-chart" [chartConfig]="this.chartDB.sessionAACC"></app-apex-chart>
+        </app-card>
+      </div>
+      <div class="col-md-4 col-xl-2 col-sm-6">
+        <app-card [hidHeader]="true">
+          <span>Page view</span>
+          <h3>9454</h3>
+          <app-apex-chart chartID="analytics-apex-page-view-chart" [chartConfig]="this.chartDB.pageViewAACC"></app-apex-chart>
+        </app-card>
+      </div>
+      <div class="col-md-4 col-xl-2 col-sm-6">
+        <app-card [hidHeader]="true">
+          <span>Page / Session</span>
+          <h3>7.15</h3>
+          <app-apex-chart chartID="analytics-apex-page-session-chart" [chartConfig]="this.chartDB.pageSessionAACC"></app-apex-chart>
+        </app-card>
+      </div>
+      <div class="col-md-4 col-xl-2 col-sm-6">
+        <app-card [hidHeader]="true">
+          <span>Avg. Session Time</span>
+          <h3>00:04:30</h3>
+          <app-apex-chart chartID="analytics-apex-avg-session-chart" [chartConfig]="this.chartDB.avgSessionAACC"></app-apex-chart>
+        </app-card>
+      </div>
+      <div class="col-md-4 col-xl-2 col-sm-6">
+        <app-card [hidHeader]="true">
+          <span>Bounce Rate</span>
+          <h3>1.55%</h3>
+          <app-apex-chart chartID="analytics-apex-bounce-rate-chart" [chartConfig]="this.chartDB.bounceRateAACC"></app-apex-chart>
+        </app-card>
+      </div>
+    </div>
+  </div>
+  <!-- conversion-section end -->
+
+  <!-- account-section start -->
+  <div class="col-xl-8">
+    <app-card cardTitle="Daily Visitor" [options]="false">
+      <app-apex-chart chartID="daily-visitor-aa-cc" [chartConfig]="this.chartDB.dailyVisitorAACC" [xAxis]="dailyVisitorAxis"></app-apex-chart>
+    </app-card>
+  </div>
+  <!-- customer overview start -->
+</div>

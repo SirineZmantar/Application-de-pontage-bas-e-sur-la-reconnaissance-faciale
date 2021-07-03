@@ -1,0 +1,103 @@
+
+<app-admin></app-admin>
+    <!-- [ basic-table ] start -->
+    
+    <!-- [ basic-table ] end -->
+    <!-- [ inverse-table ] start -->
+
+    <!-- [ inverse-table ] end -->
+    <!-- [ Hover-table ] start -->
+    
+    <!-- [ dark-table ] end -->
+    <!-- [ striped-table ] start -->
+    
+    <!-- [ striped-table ] end -->
+    <!-- [ Contextual-table ] start -->
+  
+     
+    <div class="row col-md-6 col-md-offset-2 custyle">
+      <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+      <table id="ok"class="table1">
+        <thead>
+          <tr>
+            <!-- <th scope="col">  <input type="text" id="id" name="id" (change)="onChange($event)" [(ngModel)]="user.id"  [ngModelOptions]="{standalone: true}" ></th>
+              --> <th scope="col" >  <input type="file" id="image" name="image" (change)="onChange($event)" [(ngModel)]="image"  [ngModelOptions]="{standalone: true}" style="width:115px" ></th>
+               <th scope="col" > <input type="text" class="form-control" id="lastname" (change)="Change($event)" [(ngModel)]="user.lastname" name="lastname"  [ngModelOptions]="{standalone: true}"  style="width:90px" placeholder="Nom" required/></th>
+               <th scope="col" > <input type="text" class="form-control" id="firstname" name="firstname" (change)="Change1($event)"  [(ngModel)]="user.firstname"  [ngModelOptions]="{standalone: true}" style="width:110px" placeholder="Prénom"></th>
+               <th scope="col" > <input type="text" class="form-control" id="email" [(ngModel)]="user.email" name="email" (change)="Change2($event)"   [ngModelOptions]="{standalone: true}" style="width:200px" placeholder="Email"></th>
+               <th scope="col"  > <input type="text" class="form-control" id="pwd" name="pwd" [(ngModel)]="user.pwd" (change)="Change3($event)"  [ngModelOptions]="{standalone: true}" style="width:130px" placeholder="Mot de passe"></th> 
+               <th scope="col" > <input type="text" class="form-control" id="tel" name="tel" [(ngModel)]="user.tel" (change)="Change4($event)"  [ngModelOptions]="{standalone: true}" style="width:130px" placeholder="Téléphone"></th>
+               <th scope="col"  > <input type="text" class="form-control" id="service" [(ngModel)]="user.service" (change)="Change5($event)"  [ngModelOptions]="{standalone: true}" style="width:110px" name="service" placeholder="Service"></th> 
+              <!--- <th scope="col"> <input type="datetime" class="form-control" id="date_e" name="date_e" (change)="Change6($event)"  [(ngModel)]="date_e" [ngModelOptions]="{standalone: true}" placeholder="Date_e"></th>
+               <th scope="col"> <input type="datetime" class="form-control" id="date_s" name="date_s" (change)="Change7($event)" [(ngModel)]="date_s" [ngModelOptions]="{standalone: true}" placeholder="Date_s"></th>
+              -->
+               <th  ><button type="submit" name="add" class=" btn text-white" style=" background-color:#007E33 ; width:70px" >ADD</button></th>
+               <th ><button type="button" name="add" class="btn text-white" style="background-color: #0099CC ;  width:80px" (click)="updateuser(user)" >Update</button></th>
+            
+           </tr>
+   <!--           
+    <tr>
+      <th scope="col">  <input type="file" id="image" name="image"  [(ngModel)]="image" ></th>
+      <th scope="col"> <input type="text" class="form-control" id="lastname" [(ngModel)]="lastname" name="lastname" placeholder="Nom"></th>
+      <th scope="col"> <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="firstname" placeholder="Prénom"></th>
+      <th scope="col"> <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email"></th>
+      <th scope="col"> <input type="text" class="form-control" id="pwd" name="pwd" [(ngModel)]="pwd" placeholder="Mot de passe"></th>
+      <th scope="col"> <input type="text" class="form-control" id="tel" name="tel" [(ngModel)]="tel" placeholder="Téléphone"></th>
+      <th scope="col"> <input type="text" class="form-control" id="service" [(ngModel)]="service" name="service" placeholder="Service"></th> 
+   <th scope="col"> <input type="date" class="form-control" id="date_e" name="date_e" [(ngModel)]="date_e" placeholder="Date_e"></th>
+      <th scope="col"> <input type="date" class="form-control" id="date_s" name="date_s" [(ngModel)]="date_s" placeholder="Date_s"></th>
+ 
+      <th><button type="button" name="add" (click)="addUser(this)" class="btn btn-dark">Ajouter</button></th>
+  </tr>-->
+            <tr class="tr1">
+              <th scope="col" width="130px">Image</th>
+              <th scope="col"width="130px">Nom</th>
+              <th scope="col"width="130px">Prénom</th>
+              <th scope="col"width="180px">E-mail</th>
+              <th scope="col" width="130px">Mot de passe</th>
+              <th scope="col" width="130px">Téléphone</th>
+              <th scope="col" width="130px">Service</th>
+          <th scope="col" colspan="2">Actions</th>  
+            </tr>
+          </thead>
+          <tr  *ngFor="let d of (users) " >
+            <!-- <td>{{ d.id }}</td>-->
+             <td><img src="{{ d.image }}" width="70px" ></td>
+             <td>{{ d.lastname }}</td>
+             <td>{{ d.firstname }}</td>
+             <td width="180px">{{ d.email}} </td>
+             <td>{{ d.pwd }}</td>
+             <td>{{ d.tel }}</td>
+             <td>{{ d.service }}</td>
+             <td><button type="button" class="btn  btn-sm text-white" style="background-color :#0099CC" (click)="userclicked(d)">UPDATE</button></td>
+             <td><button type="button" class="btn  btn-sm text-white" style="background-color : #b71c1c;" (click)="deleteuser(d)">DELETE</button></td>
+     
+            
+            
+             
+            
+         </tr>
+            <!--  <tr class="tr2" *ngFor="let d of (empl) " (click)="editUser(d,this)">
+                <td><img src={{d.image}}></td> 
+                <td>{{ d.lastname }}</td>
+                <td>{{ d.firstname }}</td>
+               
+                <td>{{ d.email}}</td>
+                <td>{{ d.pwd }}</td>
+                <td>{{ d.tel }}</td>
+                <td>{{ d.pwd }}</td>
+              
+               
+               
+                
+                <td><button type="button" class="btn btn-dark btn-sm" (click)="deleteUser(d)">DELETE ROW</button></td>
+            </tr>
+          -->
+        </table>
+      </form>
+      
+          </div>
+   
+   
+
+  
